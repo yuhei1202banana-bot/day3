@@ -6,99 +6,110 @@ import streamlit as st
 st.set_page_config(page_title="Vietnam Shop Website", layout="wide")
 
 # =============================
-# Custom CSS
+# Custom CSS - Stylish Modern Theme
 # =============================
 custom_css = """
 <style>
-body {
-    background: #fafafa;
-    font-family: Arial, sans-serif;
+/* Global Background Gradient */
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(to bottom right, #f6f2ec, #f0e7dd);
+    font-family: 'Helvetica', sans-serif;
 }
 
-header {
-    background: #ff7f32;
-    color: white;
-    padding: 25px;
+/* Main Header */
+.header-box {
+    background: #ff8a3d;
+    padding: 40px;
+    border-radius: 16px;
     text-align: center;
-    font-size: 30px;
-    border-radius: 8px;
-    margin-bottom: 25px;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* Content Blocks */
 .block {
-    background: #ffffff;
-    padding: 22px;
-    border-radius: 12px;
-    margin-bottom: 22px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    background: #ffffffdd;
+    padding: 28px;
+    border-radius: 18px;
+    margin-bottom: 28px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-h2 {
-    color: #ff7f32;
+.block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Titles */
+.block-title {
+    color: #ff8a3d;
+    font-size: 26px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
-footer {
+/* Footer */
+.footer {
     text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-    color: #777;
-    font-size: 13px;
+    color: #666;
+    margin-top: 35px;
+    padding: 20px;
+    font-size: 14px;
 }
 </style>
 """
 
 st.markdown(custom_css, unsafe_allow_html=True)
 
-
 # =============================
 # Header
 # =============================
-st.markdown(
-    "<header>Welcome to Our Shop in Vietnam</header>",
-    unsafe_allow_html=True
-)
-
+st.markdown('<div class="header-box">Welcome to Our Shop in Vietnam</div>', unsafe_allow_html=True)
 
 # =============================
-# Main Content
+# Main Content Blocks
 # =============================
 st.markdown('<div class="block">', unsafe_allow_html=True)
-st.markdown("## About Our Shop")
+st.markdown('<div class="block-title">About Our Shop</div>', unsafe_allow_html=True)
 st.write(
-    "We provide high-quality products at fair prices. "
-    "Our shop is located in Vietnam and we welcome both locals and tourists."
+    "We offer high-quality products at fair and honest prices. "
+    "Our shop welcomes both local customers and international visitors with warm service and reliability."
 )
 st.markdown('</div>', unsafe_allow_html=True)
 
-
 st.markdown('<div class="block">', unsafe_allow_html=True)
-st.markdown("## Why Choose Us?")
+st.markdown('<div class="block-title">Why Choose Us?</div>', unsafe_allow_html=True)
 st.write("""
-• Transparent pricing  
-• Friendly service  
-• Reliable quality  
-• Easy communication in English  
+• Transparent and fair pricing  
+• Friendly and reliable staff  
+• High-quality, trusted products  
+• Smooth English communication  
+• Support for tourists and local customers  
 """)
 st.markdown('</div>', unsafe_allow_html=True)
 
-
 st.markdown('<div class="block">', unsafe_allow_html=True)
-st.markdown("## Catalog (Text Only)")
+st.markdown('<div class="block-title">Catalog</div>', unsafe_allow_html=True)
 st.write("""
+Here is our text-based catalog (image-free version):
 - Product A — Description / Price  
 - Product B — Description / Price  
 - Product C — Description / Price  
-- Custom orders available  
+- Custom orders available upon request  
 """)
 st.markdown('</div>', unsafe_allow_html=True)
-
 
 # =============================
 # Google Maps Block
 # =============================
 st.markdown('<div class="block">', unsafe_allow_html=True)
-st.markdown("## Find Us on Google Maps")
+st.markdown('<div class="block-title">Find Us on Google Maps</div>', unsafe_allow_html=True)
 
 st.components.v1.html(
     """
@@ -112,20 +123,18 @@ st.components.v1.html(
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-
 # =============================
 # Developed in Japan
 # =============================
 st.markdown('<div class="block">', unsafe_allow_html=True)
-st.markdown("## Developed in Japan")
+st.markdown('<div class="block-title">Developed in Japan</div>', unsafe_allow_html=True)
 st.write(
     "This website was fully designed and developed by a Japanese engineer. "
-    "We ensure clean design, stable performance, and professional communication."
+    "We deliver clean UI, stable performance, and trustworthy development quality."
 )
 st.markdown('</div>', unsafe_allow_html=True)
-
 
 # =============================
 # Footer
 # =============================
-st.markdown('<footer>© 2025 Vietnam Shop Website — Developed in Japan</footer>', unsafe_allow_html=True)
+st.markdown('<div class="footer">© 2025 Vietnam Shop Website — Developed in Japan</div>', unsafe_allow_html=True)
